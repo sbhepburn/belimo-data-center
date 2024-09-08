@@ -22,3 +22,4 @@ const selectHotspot = (e) => {
     });
   })();
   
+;
