@@ -14,13 +14,17 @@
 
 body {
   margin: 0;
+  font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  
 }
+
 
 * {
   box-sizing: border-box;
 }
 
-.content-button {
+.content-button, .close-dialog {
+  cursor: pointer;
   border-radius: 20px;
   background-color: var(--color-button);
   color: #fff;
@@ -152,11 +156,11 @@ body {
   transition: all var(--label-fade) linear;
 }
 
-.lg-hotspot__label h4 {
+.lg-hotspot__label h2 {
   margin: 0;
   padding: 0.65em var(--label-padding-x);
   background-color: var(--color-heading-background);
-  font-size: 1.1em;
+  font-size: 1.6em;
   font-weight: normal;
   letter-spacing: 0.02em;
   color: white;
@@ -203,4 +207,46 @@ body {
     transform: scale(1, 1);
     opacity: 1;
   }
+}
+
+
+/* dialogs */
+dialog {
+  /* border: none; */
+  border-radius: 5px;
+  padding: 20px;
+  width: 50vw;
+  max-height: 50svh;
+  overflow-y: scroll;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border: 8px solid var(--color-button);
+  position: relative;
+  overscroll-behavior: contain;
+  @media (max-width: 599px) {
+    width: calc(100vw - 40px);
+    max-height: calc(100svh - 40px);
+  }
+}
+dialog h2 {
+  color: var(--color-button);
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(1px);
+  filter: brightness(0.8);
+}
+
+dialog[open] {
+  display: block;
+}
+dialog .close-dialog-x {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 30px;
+  width: 30px;
+  background: url(/assets/close.svg) center center / contain no-repeat;
 }

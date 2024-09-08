@@ -23,3 +23,16 @@ const selectHotspot = (e) => {
   })();
   
 ;
+// script.js
+$(document).ready(function() {
+  $('.content-button').on('click', function(e) {
+    e.preventDefault();
+    var dialogId = $(this).data('dialog');
+    var $dialog = $('#' + dialogId);
+    $dialog[0].showModal(); // Show the dialog
+  });
+
+  $('.close-dialog, .close-dialog-x').on('click', function() {
+    $(this).closest('dialog')[0].close(); // Close the dialog
+  });
+});
