@@ -30,6 +30,8 @@ $(document).ready(function() {
     var dialogId = $(this).data('dialog');
     var $dialog = $('#' + dialogId);
     $dialog[0].showModal(); // Show the dialog
+    $dialog[0].scrollTop = 0;
+
   });
 
   $('.close-dialog, .close-dialog-x').on('click', function() {

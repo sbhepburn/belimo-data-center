@@ -223,6 +223,8 @@ dialog {
   border: 8px solid var(--color-button);
   position: relative;
   overscroll-behavior: contain;
+  scroll-behavior: smooth; /* Smooth scrolling, but adjust if it causes issues */
+
   @media (max-width: 599px) {
     width: calc(100vw - 40px);
     max-height: calc(100svh - 40px);
