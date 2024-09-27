@@ -1,3 +1,4 @@
+
 // Function to handle hotspot selection
 const selectHotspot = (e) => {
     const clickedHotspot = e.target.parentElement;
