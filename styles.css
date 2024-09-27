@@ -12,6 +12,34 @@
   --color-heading-background: #ff6600;
 }
 
+@media (max-width: 1024px) {
+  :root {
+    --button-radius: 12px;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    /* height: 100svh; */
+  }
+  .container {
+  }
+  .lg-container {
+    /* width: unset !important; */
+    height: 100vh;
+    /* max-width: unset !important; */
+  }
+  .lg-image {
+    /* width: auto !important; */
+    /* height: 100% !important; */
+    /* object-fit: contain !important; */
+  }
+  .lg-hotspot__label {
+    display: none;
+  }
+}
+
+
+
 body {
   margin: 0;
   font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
