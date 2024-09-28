@@ -248,7 +248,7 @@ dialog {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   border: 8px solid var(--color-button);
-  position: relative;
+  position: fixed;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
   opacity: 0;
