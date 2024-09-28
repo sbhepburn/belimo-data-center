@@ -14,60 +14,47 @@
 
 @media (max-width: 1024px) {
   :root {
-    --button-radius: 12px;
+    --button-radius: 8px;
   }
 }
-@media (max-width: 767px) {
+
+@media (max-width: 1024px) {
   body {
-    /* height: 100svh; */
-    width: 100% !important;
-    max-width: unset !important;
-    overflow-x: scroll !important;
+    &:after {
+      content: '';
+      position: fixed;
+      color: var(--color-button);
+      bottom: 20px;
+      right: 20px;
+      padding: 20px;
+      background: url(assets/scroll-right.svg) center center / contain no-repeat;
+    }
+    .lg-container {
+      height: 100svh;
+      width: fit-content;
+      max-width: unset;
+      .lg-image {
+        height: 100svh;
+        width: fit-content;
+        max-width: unset;
+      }
+      .lg-hotspot__label {
+      }    
+    }
   }
-  .container {
-    width: fit-content;
-    overflow-x: scroll !important;
-  }
-  
-  .lg-container {
-    width: auto !important;
-    height: 100vh;
-    overflow-x: scroll !important;
-    max-width: unset !important;
-  }
-  .lg-image {
-    width: auto !important;
-    overflow-x: scroll;
-    /* object-fit: contain !important; */
-    /* height: 100% !important; */
-  }
-  .lg-hotspot__label {
-    display: none;
-  }
+
 }
-
-
 
 body {
   margin: 0;
   font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
 }
-
 
 * {
   box-sizing: border-box;
 }
 
 .container {
-  width: 100%;
-  /* padding: 1em; */
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
   position: relative;
 }
 
@@ -75,25 +62,16 @@ body {
   width: 100%;
   max-width: 100%;
   position: relative;
-  /* margin: 1rem; */
   padding: 0;
-  /* width: 100svw; */
-  /* height: 100svh; */
-
 }
 
 .lg-image {
   display: block;
-  height: 100%;
   width: 100%;
   object-fit: cover;
   position: relative;
   z-index: 0;
-  /* width: 100svw; */
-  /* height: 100svh; */
-
 }
-
 
 .content-button, .close-dialog {
   cursor: pointer;
@@ -265,7 +243,6 @@ dialog {
   /* border: none; */
   border-radius: 5px;
   padding: 20px;
-  width: 40vw;
   max-height: 70svh;
   overflow-y: scroll;
   background-color: white;
@@ -276,8 +253,13 @@ dialog {
   scroll-behavior: smooth;
   opacity: 0;
   transform: translateY(-20px) scale(0.95);
-
-  @media (max-width: 599px) {
+  width: 40vw;
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: calc(80vw);
+    max-height: calc(80svh);
+  }
+  @media (max-width: 767px) {
     width: calc(100vw - 40px);
     max-height: calc(100svh - 40px);
   }
