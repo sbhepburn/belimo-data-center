@@ -20,18 +20,26 @@
 @media (max-width: 767px) {
   body {
     /* height: 100svh; */
+    width: 100% !important;
+    max-width: unset !important;
+    overflow-x: scroll !important;
   }
   .container {
+    width: fit-content;
+    overflow-x: scroll !important;
   }
+  
   .lg-container {
-    /* width: unset !important; */
+    width: auto !important;
     height: 100vh;
-    /* max-width: unset !important; */
+    overflow-x: scroll !important;
+    max-width: unset !important;
   }
   .lg-image {
-    /* width: auto !important; */
-    /* height: 100% !important; */
+    width: auto !important;
+    overflow-x: scroll;
     /* object-fit: contain !important; */
+    /* height: 100% !important; */
   }
   .lg-hotspot__label {
     display: none;
