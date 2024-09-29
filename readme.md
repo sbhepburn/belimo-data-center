@@ -1,5 +1,9 @@
 Todo: 
-fig caption
+[] fig caption
+[] image on hover
+[] scroll indicator
+[] no image, no broken link indicator
+[] email client
 
 # Components and Copy
 
