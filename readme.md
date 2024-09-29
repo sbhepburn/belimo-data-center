@@ -1,3 +1,6 @@
+Todo: 
+fig caption
+
 # Components and Copy
 
 ## Cooling Distribution Units (CDUs)
