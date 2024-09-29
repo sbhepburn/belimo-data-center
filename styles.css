@@ -41,14 +41,14 @@ body {
 
 @keyframes animate-scroll {
   0% {
-    opacity: 0.0;
+    opacity: 0.2;
     transform: translate(-50%, -50%);
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.0;
+    opacity: 0.2;
     transform: translate(-500%, -50%);
   }
 }
