@@ -42,7 +42,6 @@
       }    
     }
   }
-
 }
 
 body {
@@ -56,6 +55,7 @@ body {
 
 .container {
   position: relative;
+  overflow-y: hidden;
 }
 
 .lg-container {
