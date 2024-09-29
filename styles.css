@@ -14,14 +14,8 @@
 
 @media (max-width: 1024px) {
   body {
-    &:after {
-      content: '';
-      position: fixed;
-      color: var(--color-button);
-      bottom: 20px;
-      right: 20px;
-      padding: 20px;
-      background: url(assets/scroll-right.svg) center center / contain no-repeat;
+    .scroll-indicator {
+      display: block;
     }
     .lg-container {
       height: 100svh;
@@ -45,6 +39,66 @@ body {
   box-sizing: border-box;
 }
 
+@keyframes animate-scroll {
+  0% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+    transform: translate(-500%, -50%);
+  }
+}
+
+.scroll-indicator {
+  position: fixed;
+  z-index: 99;
+  bottom: 20px;
+  right: 20px;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  display: none;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-button);
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    background: url(assets/scroll-right.svg) center center / contain no-repeat;
+  }
+  &:before {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(-500%, -50%);
+    color: var(--color-button);
+    bottom: 20px;
+    right: 40px;
+    width: 15px;
+    height: 15px;
+    background: var(--color-button);
+    border-radius: 50%;
+    animation: animate-scroll 2s ease 0s infinite;
+  }
+  .label {
+    position: absolute;
+    bottom: -10px;
+    left: -50%;
+    transform: translate(-50%, 60%);
+    width: fit-content;
+    white-space: nowrap;
+    color: var(--color-button)
+  }
+}
 .container {
   position: relative;
   overflow-y: hidden;
