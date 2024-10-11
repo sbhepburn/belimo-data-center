@@ -10,18 +10,6 @@ const selectHotspot = (e) => {
     if (dialog) {
         dialog.showModal();
     }
-    // if (window.innerWidth <= 767) {
-    // }
-    // else {
-    //     // For larger screens, toggle the hotspot label
-    //     hotspots.forEach(hotspot => {
-    //         if (hotspot === clickedHotspot) {
-    //             hotspot.classList.toggle("lg-hotspot--selected");
-    //         } else {
-    //             hotspot.classList.remove("lg-hotspot--selected");
-    //         }
-    //     });
-    // }
 };
 
 // Initialize event listeners
