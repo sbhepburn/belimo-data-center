@@ -163,7 +163,11 @@ body {
   margin: 0;
   padding: 0;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: 1;
+}
+
+.lg-hotspot:hover {
+  z-index: 3;
 }
 
 .lg-hotspot:hover .lg-hotspot__button,
@@ -196,6 +200,7 @@ body {
     opacity: 1;
     clip-path: inset(0 0 0 0);
     z-index: 99;
+    pointer-events: all;
   }
 }
 
@@ -245,7 +250,7 @@ body {
   line-height: 1.45em;
   z-index: -1;
   border-radius: var(--label-border-radius);
-  user-select: none;
+  /* user-select: none; */
   opacity: 0;
   transition: all var(--label-fade) linear;
   clip-path: inset(0% 100% 0 0);
@@ -399,9 +404,16 @@ dialog .close-dialog-x {
   cursor: pointer;
   border: none;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   height: 30px;
   width: 30px;
   background: url(/assets/close.svg) center center / contain no-repeat;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: background-color .5s ease;
+}
+
+dialog .close-dialog-x:hover {
+  background-color: var(--color-button-hover);
 }
