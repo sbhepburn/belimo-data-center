@@ -417,3 +417,7 @@ dialog .close-dialog-x {
 dialog .close-dialog-x:hover {
   background-color: var(--color-button-hover);
 }
+
+dialog .dialog-image {
+  max-width: 100%;
+}
