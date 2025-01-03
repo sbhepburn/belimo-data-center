@@ -419,5 +419,16 @@ dialog .close-dialog-x:hover {
 }
 
 dialog .dialog-image {
-  max-width: 100%;
+  display: grid;
+  place-items: center;
+  max-width: 60%;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+@media (max-width: 1024px) {
+  dialog .dialog-image {
+    max-width: 100%;
+    width: 100%;
+  }
 }
