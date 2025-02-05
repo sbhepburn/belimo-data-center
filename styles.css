@@ -13,9 +13,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .scroll-indicator {
+  /* .scroll-indicator {
     display: block !important;
-  }
+  } */
 
   .lg-container {
     height: 100svh;
