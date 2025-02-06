@@ -10,9 +10,12 @@
   --color-button-hover: #ff774c;
   --color-text: #333;
   --color-heading-background: #ff6600;
+  @media screen and (max-width: 1024px) {
+  --button-radius: 15px;
+  }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 800px) {
   /* .scroll-indicator {
     display: block !important;
   } */
@@ -195,7 +198,7 @@ body {
 }
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 800px) {
   .lg-hotspot:hover .lg-hotspot__label {
     opacity: 1;
     clip-path: inset(0 0 0 0);
@@ -254,6 +257,9 @@ body {
   opacity: 0;
   transition: all var(--label-fade) linear;
   clip-path: inset(0% 100% 0 0);
+  @media screen and (max-width: 1024px) {
+    font-size: 12px;
+  }
 }
 
 .lg-hotspot__label::hover {
@@ -269,6 +275,9 @@ body {
   letter-spacing: 0.02em;
   color: white;
   border-radius: var(--label-border-radius) var(--label-border-radius) 0 0;
+  @media screen and (max-width: 1024px) {
+    font-size: 1.2em;
+  }
 }
 
 .lg-hotspot__label .inner {
