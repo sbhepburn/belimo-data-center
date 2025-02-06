@@ -442,7 +442,7 @@ dialog .dialog-image {
 }
 @media (max-width: 800px) {
   dialog .dialog-image {
-    max-width: 100%;
+    max-width: 75%;
     width: 100%;
   }
 }
