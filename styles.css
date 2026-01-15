@@ -27,6 +27,7 @@
     }
   .container {
     height: 100%;
+    overflow: clip;
     position: relative;
   }
   img.lg-image.desktop {
