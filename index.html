@@ -12,6 +12,21 @@
 	</head>
 
 	<body>
+		<!-- Layout Toggle Button (Option 1) -->
+		<button id="layout-toggle-btn" class="layout-toggle-btn" aria-label="Switch to portrait layout" data-mode="desktop">
+			<svg class="icon-desktop" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+				<path d="M2 17h20M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+			</svg>
+			<svg class="icon-mobile" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+				<circle cx="12" cy="19" r="1" fill="currentColor"/>
+			</svg>
+		</button>
+
+		<!-- Visual Feedback for Toggle -->
+		<div id="layout-feedback" class="layout-feedback"></div>
+
 		<div class="container">
 			<!-- <div class="scroll-indicator" role="decoration">
 			      <span class="label">Scroll to See More</span>

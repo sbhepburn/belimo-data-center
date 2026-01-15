@@ -52,6 +52,41 @@
   }
 }
 
+/* Force mobile layout class - applies mobile styles regardless of aspect ratio */
+html.force-mobile-layout {
+  height: 100% !important;
+}
+html.force-mobile-layout body {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+html.force-mobile-layout .container {
+  height: 100% !important;
+  overflow: clip !important;
+  position: relative !important;
+}
+html.force-mobile-layout img.lg-image.desktop {
+  display: none !important;
+}
+html.force-mobile-layout img.lg-image.mobile {
+  display: block !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+html.force-mobile-layout img.lg-image.mobile-thumbnail {
+  display: block !important;
+  width: 60% !important;
+  object-fit: contain !important;
+  justify-self: end !important;
+  align-self: flex-end !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  z-index: 0 !important;
+}
+
 /* Component Positions */
 /* Hotspot positions (moved from inline styles) */
 .lg-container #ahu { top: 27%; left: 36%; }
@@ -79,6 +114,58 @@
 .lg-container #generators { top: 75%; left: 15%; }
 .lg-container #central-plant { top: 15%; left: 80%; }
 }
+
+/* Force mobile layout hotspot positions */
+html.force-mobile-layout .lg-container #ahu { top: 27% !important; left: 36% !important; }
+html.force-mobile-layout .lg-container #fan-wall { top: 58% !important; left: 65% !important; }
+html.force-mobile-layout .lg-container #crah { top: 65% !important; left: 45% !important; }
+html.force-mobile-layout .lg-container #cdu { top: 47% !important; left: 56% !important; }
+html.force-mobile-layout .lg-container #direct-to-chip { top: 27% !important; left: 65% !important; }
+html.force-mobile-layout .lg-container #rdhx { top: 43% !important; left: 76% !important; }
+html.force-mobile-layout .lg-container #two-phase-immersion { top: 47% !important; left: 41% !important; }
+html.force-mobile-layout .lg-container #fire-and-smoke { top: 46% !important; left: 32% !important; }
+html.force-mobile-layout .lg-container #generators { top: 75% !important; left: 15% !important; }
+html.force-mobile-layout .lg-container #central-plant { top: 15% !important; left: 80% !important; }
+
+/* Force desktop layout class - overrides media query to show desktop layout */
+html.force-desktop-layout {
+  height: auto !important;
+}
+html.force-desktop-layout body {
+  height: auto !important;
+  display: block !important;
+  flex-direction: unset !important;
+}
+html.force-desktop-layout .container {
+  height: auto !important;
+  overflow-y: hidden !important;
+  position: relative !important;
+}
+html.force-desktop-layout img.lg-image.desktop {
+  display: block !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+html.force-desktop-layout img.lg-image.mobile {
+  display: none !important;
+}
+html.force-desktop-layout img.lg-image.mobile-thumbnail {
+  display: none !important;
+}
+
+/* Force desktop layout hotspot positions */
+html.force-desktop-layout .lg-container #ahu { top: 27% !important; left: 36% !important; }
+html.force-desktop-layout .lg-container #fan-wall { top: 58% !important; left: 50.5% !important; }
+html.force-desktop-layout .lg-container #crah { top: 62% !important; left: 40% !important; }
+html.force-desktop-layout .lg-container #cdu { top: 47% !important; left: 45% !important; }
+html.force-desktop-layout .lg-container #direct-to-chip { top: 27% !important; left: 48% !important; }
+html.force-desktop-layout .lg-container #rdhx { top: 43% !important; left: 53% !important; }
+html.force-desktop-layout .lg-container #two-phase-immersion { top: 47% !important; left: 41% !important; }
+html.force-desktop-layout .lg-container #fire-and-smoke { top: 46% !important; left: 35.5% !important; }
+html.force-desktop-layout .lg-container #generators { top: 66% !important; left: 23% !important; }
+html.force-desktop-layout .lg-container #central-plant { top: 30% !important; left: 64% !important; }
 
 
 @media screen and (max-width: 800px) {
@@ -516,5 +603,107 @@ dialog .dialog-image {
   dialog .dialog-image {
     max-width: 75%;
     width: 100%;
+  }
+}
+
+/* Layout Toggle Button (Option 1) */
+.layout-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-button);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.layout-toggle-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  background-color: var(--color-button-hover);
+}
+
+.layout-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Show desktop icon by default */
+.layout-toggle-btn[data-mode="desktop"] .icon-desktop {
+  display: block;
+}
+
+.layout-toggle-btn[data-mode="desktop"] .icon-mobile {
+  display: none;
+}
+
+/* Show mobile icon when in mobile mode */
+.layout-toggle-btn[data-mode="mobile"] .icon-desktop {
+  display: none;
+}
+
+.layout-toggle-btn[data-mode="mobile"] .icon-mobile {
+  display: block;
+}
+
+.layout-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+/* Visual Feedback Message */
+.layout-feedback {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 9998;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.layout-feedback.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Adjust button size on smaller screens */
+@media screen and (max-width: 1024px) {
+  .layout-toggle-btn {
+    width: 35px;
+    height: 35px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .layout-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .layout-feedback {
+    top: 60px;
+    right: 15px;
+    font-size: 12px;
+    padding: 8px 16px;
   }
 }
